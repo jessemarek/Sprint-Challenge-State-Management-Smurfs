@@ -57,4 +57,14 @@ button {
   padding: 2% 3%;
   border: 1px solid black;
   border-radius: 7px;
+  outline: none;
+  box-shadow: 1px 1px 4px #444;
+}
+
+button:active{
+  box-shadow: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
