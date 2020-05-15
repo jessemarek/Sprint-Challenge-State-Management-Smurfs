@@ -4,6 +4,7 @@ import { fetchSmurf } from '../store/actions'
 
 import SmurfCard from './SmurfCard'
 import AddSmurfForm from './AddSmurfForm'
+import RemoveSmurfForm from './RemoveSmurfForm'
 
 const Smurfs = props => {
 
@@ -27,7 +28,13 @@ const Smurfs = props => {
             {
                 smurfList && smurfList.map((smurf, idx) => <SmurfCard key={idx} name={smurf.name} age={smurf.age} height={smurf.height} />)
             }
-            <AddSmurfForm />
+            <div>
+                <h3>Add a Smurf</h3>
+                <AddSmurfForm />
+                <h3>Delete a Smurf</h3>
+                <RemoveSmurfForm />
+            </div>
+
         </div>
     )
 }
