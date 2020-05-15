@@ -26,16 +26,26 @@ const Smurfs = props => {
             {
                 isFetching && <h3>Fetching Data...</h3>
             }
-            {
-                smurfList && smurfList.map((smurf, idx) => <SmurfCard key={idx} name={smurf.name} age={smurf.age} height={smurf.height} />)
-            }
-            <div>
-                <h3>Add a Smurf</h3>
-                <AddSmurfForm />
-                <h3>Edit a Smurf</h3>
-                <EditSmurfForm />
-                <h3>Delete a Smurf</h3>
-                <RemoveSmurfForm />
+            <div className="smurf-container">
+                {
+                    smurfList && smurfList.map((smurf, idx) => <SmurfCard key={idx} name={smurf.name} age={smurf.age} height={smurf.height} />)
+                }
+            </div>
+            <div className="forms">
+                <div>
+                    <h3>Add a Smurf</h3>
+                    <AddSmurfForm />
+                </div>
+
+                <div>
+                    <h3>Edit a Smurf</h3>
+                    <EditSmurfForm />
+                </div>
+
+                <div>
+                    <h3>Delete a Smurf</h3>
+                    <RemoveSmurfForm />
+                </div>
             </div>
 
         </div>
