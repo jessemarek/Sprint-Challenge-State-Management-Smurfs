@@ -5,6 +5,7 @@
 }
 
 .App {
+  background: dodgerblue;
   text-align: center;
   padding: 5%;
 }
@@ -18,6 +19,7 @@
 }
 
 .smurf-container div{
+  background: #fff;
   width: 30%;
   margin: 2%;
   border: 1px solid black;
@@ -26,11 +28,16 @@
 
 }
 
+.smurf-container h2 {
+  color: crimson;
+}
+
 .forms {
   flex-flow: row nowrap;
 }
 
 .forms div {
+  background: #fff;
   margin: 5%;
   border: 1px solid black;
   padding: 5%;
@@ -39,6 +46,7 @@
 
 .forms h3 {
   margin: 3% auto;
+  color: crimson;
 
 }
 
