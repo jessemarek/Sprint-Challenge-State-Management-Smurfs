@@ -2,7 +2,7 @@
 import {
     FETCH_SMURF_START,
     FETCH_SMURF_SUCCESS,
-    FETCH_SMURF_FAILURE
+    ADD_SMURF_SUCCESS
 
 } from '../actions'
 
@@ -29,10 +29,10 @@ export const smurfReducer = (state = initialState, action) => {
                 isFetching: false
             }
 
-        case FETCH_SMURF_FAILURE:
+        case ADD_SMURF_SUCCESS:
             return {
                 ...state,
-                isFetching: false
+                smurfList: [...state.smurfList, action.payload]
             }
 
         default:

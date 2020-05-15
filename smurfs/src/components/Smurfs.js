@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchSmurf } from '../store/actions'
 
 import SmurfCard from './SmurfCard'
+import AddSmurfForm from './AddSmurfForm'
 
 const Smurfs = props => {
 
@@ -16,7 +17,7 @@ const Smurfs = props => {
     useEffect(() => {
         fetchSmurf()
 
-    }, [])
+    }, [fetchSmurf])
 
     return (
         <div>
@@ -24,8 +25,9 @@ const Smurfs = props => {
                 isFetching && <h3>Fetching Data...</h3>
             }
             {
-                smurfList && smurfList.map(smurf => <SmurfCard name={smurf.name} age={smurf.age} height={smurf.height} />)
+                smurfList && smurfList.map((smurf, idx) => <SmurfCard key={idx} name={smurf.name} age={smurf.age} height={smurf.height} />)
             }
+            <AddSmurfForm />
         </div>
     )
 }
