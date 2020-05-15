@@ -4,6 +4,7 @@ import { fetchSmurf } from '../store/actions'
 
 import SmurfCard from './SmurfCard'
 import AddSmurfForm from './AddSmurfForm'
+import EditSmurfForm from './EditSmurfForm'
 import RemoveSmurfForm from './RemoveSmurfForm'
 
 const Smurfs = props => {
@@ -31,6 +32,8 @@ const Smurfs = props => {
             <div>
                 <h3>Add a Smurf</h3>
                 <AddSmurfForm />
+                <h3>Edit a Smurf</h3>
+                <EditSmurfForm />
                 <h3>Delete a Smurf</h3>
                 <RemoveSmurfForm />
             </div>

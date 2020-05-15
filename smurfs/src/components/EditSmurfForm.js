@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { addSmurf } from '../store/actions'
+import { editSmurf } from '../store/actions'
 
-const AddSmurfForm = props => {
+const EditSmurfForm = props => {
     const {
-        addSmurf
+        smurfList,
+        editSmurf
 
     } = props
 
@@ -25,7 +26,14 @@ const AddSmurfForm = props => {
 
     const onSubmit = e => {
         e.preventDefault()
-        addSmurf(formValues)
+        let smurfToEdit = null
+
+        smurfList.forEach(smurf => {
+            if (smurf.name.toLowerCase() === formValues.name.toLocaleLowerCase()) {
+                smurfToEdit = smurf.id
+            }
+        })
+        editSmurf(formValues, smurfToEdit)
         setFormValues(initialFormValues)
     }
 
@@ -63,5 +71,10 @@ const AddSmurfForm = props => {
     )
 }
 
+const mapStateToProps = state => {
+    return {
+        smurfList: state.smurfReducer.smurfList
+    }
+}
 
-export default connect(null, { addSmurf })(AddSmurfForm)
+export default connect(mapStateToProps, { editSmurf })(EditSmurfForm)

@@ -28,3 +28,26 @@ export const addSmurf = formData => {
             })
     }
 }
+
+export const EDIT_SMURF_SUCCESS = 'EDIT_SMURF_SUCCESS'
+export const editSmurf = (data, id) => {
+    return dispatch => {
+        axios.put(`${baseURL}/${id}`, { ...data })
+            .then(res => {
+                console.log('EDIT ENTRY: ', res.data)
+            })
+            .catch(err => {
+                console.log('ERROR EDITING SMURF: ', err)
+            })
+    }
+}
+
+export const DELETE_SMURF_SUCCESS = 'DELETE_SMURF_SUCCESS'
+export const deleteSmurf = id => {
+    return dispatch => {
+        axios.delete(`${baseURL}/${id}`)
+            .catch(err => {
+                console.log('ERROR DELETING SMURF: ', err)
+            })
+    }
+}
