@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 import { addSmurf } from '../store/actions'
 
 const AddSmurfForm = props => {
+    const {
+        addSmurf
+
+    } = props
 
     const initialFormValues = {
         name: '',
