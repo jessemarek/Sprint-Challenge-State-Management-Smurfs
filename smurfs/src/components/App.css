@@ -1,3 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  background: dodgerblue;
   text-align: center;
+  padding: 5%;
+}
+
+.smurf-container, .forms {
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin: 5% auto;
+}
+
+.smurf-container div{
+  background: #fff;
+  width: 30%;
+  margin: 2%;
+  border: 1px solid black;
+  padding: 5%;
+  box-shadow: 3px 3px 15px #444;
+
+}
+
+.smurf-container h2 {
+  color: crimson;
+}
+
+.forms {
+  flex-flow: row nowrap;
+}
+
+.forms div {
+  background: #fff;
+  margin: 5%;
+  border: 1px solid black;
+  padding: 5%;
+  box-shadow: 3px 3px 15px #444;
+}
+
+.forms h3 {
+  margin: 3% auto;
+  color: crimson;
+
+}
+
+form {
+  text-align: left;
+}
+
+input {
+  margin: 3% 0;
+  border: 1px solid black;
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+  padding: 2% 3%;
+  border: 1px solid black;
+  border-radius: 7px;
+  outline: none;
+  box-shadow: 1px 1px 4px #444;
+}
+
+button:active{
+  box-shadow: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
